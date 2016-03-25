@@ -1,6 +1,12 @@
-frontend-nanodegree-arcade-game
-===============================
+frontend-nanodegree-arcade-game (Frogger Clone)
+===============================================
+Customized version of the classic arcade game - Frogger
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+Collect all three gems to get the key, and use the key to unlock the portal (Which is the star, in this game).
+Avoid collision with the bugs.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+The game resets when you unlock the portal.
+Art assets by Daniel Cook, from the Planet Cute library.
+Visit [Lostgarden.com] (http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html) for more details.
+
+
