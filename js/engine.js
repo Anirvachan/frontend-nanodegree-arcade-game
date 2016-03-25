@@ -1,7 +1,7 @@
 /* Engine.js
  * This file provides the game loop functionality (update entities and render),
  * draws the initial game board on the screen, and then calls the update and
- * render methods on your player and enemy objects (defined in your app.js).
+ * render methods on player and enemy objects (defined in app.js).
  *
  * A game engine works by drawing the entire game screen over and over, kind of
  * like a flipbook you may have created as a kid. When your player moves across
@@ -25,8 +25,8 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
-    canvas.width = 505;
-    canvas.height = 606;
+    canvas.width = 900;
+    canvas.height = 1000;
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        //checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -91,10 +91,16 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
+        gemGreen.update(dt);
+        gemOrange.update(dt);
+        gemBlue.update(dt);
+        portal.update(dt);
+        key.update(dt);
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
         player.update();
+        
     }
 
     /* This function initially draws the "game level", it will then call
@@ -108,15 +114,18 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/dark-grass-block.png',   // Row 1 of 3 of water
+                'images/dark-grass-block.png',   // Row 1 of 3 of water
+                'images/dark-grass-block.png',   // Row 1 of 3 of water
+                'images/dark-stone-block.png', //w 2 of 3 of stone
+                'images/dark-stone-block.png', //w 2 of 3 of stone
+                'images/dark-stone-block.png', //w 2 of 3 of stone
+                'images/grass-block.png',   // Row 1 of 3 of grass
+                'images/grass-block.png',   // Row 2 of 3 of grass
+                'images/grass-block.png'    // Row 3 of 3 of grass
             ],
-            numRows = 6,
-            numCols = 5,
+            numRows = 9,
+            numCols = 9,
             row, col;
 
         /* Loop through the number of rows and columns we've defined above
@@ -147,11 +156,17 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
+        gemGreen.render();
+        gemOrange.render();
+        gemBlue.render();
+        key.render();
+        portal.render();
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
 
         player.render();
+        
     }
 
     /* This function does nothing but it could have been a good place to
@@ -168,10 +183,19 @@ var Engine = (function(global) {
      */
     Resources.load([
         'images/stone-block.png',
-        'images/water-block.png',
+        'images/dark-grass-block.png',
         'images/grass-block.png',
+        'images/dark-stone-block.png',
+        'images/spaceportal.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/enemy-blue.png',
+        'images/gem-orange.png',
+        'images/gem-blue.png',
+        'images/gem-green.png',
+        'images/tree.png',
+        'images/char-cat-girl.png',
+        'images/Key.png'
+       
     ]);
     Resources.onReady(init);
 
