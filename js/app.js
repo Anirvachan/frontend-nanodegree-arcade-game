@@ -113,7 +113,7 @@ Player.prototype.handleInput = function(keyCode) {
 
         default:
             console.log('Press either up, down, left, or right');
-    };
+    }
 
 
 };
@@ -214,7 +214,7 @@ var gameReset = function() {
         gemBlue.y = 500;
         player.hasKey = false;
         player.gemsCollected = 0;
-    }
+    };
     // Now instantiate your objects.
     // Place all enemy objects in an array called allEnemies
     // Place the player object in a variable called player
