@@ -123,14 +123,14 @@ Player.prototype.handleInput = function(keyCode) {
 Player.prototype.reset = function() {
     this.x = 402;
     this.y = 654;
-}
+};
 
 // The gems, which need to be collected to display the key.
 var Gem = function(x, y, sprite) {
     this.sprite = sprite;
     this.x = x;
     this.y = y;
-}
+};
 
 Gem.prototype.update = function(dt) {
     //On collision of the player with the gems, increment the number of collected gems by one.
@@ -139,16 +139,16 @@ Gem.prototype.update = function(dt) {
         console.log(player.gemsCollected);
         this.reset();
     }
-}
+};
 
 Gem.prototype.render = function(dt) {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Gem.prototype.reset = function() {
     this.x = -9999;
     this.y = -9999;
-}
+};
 
 //Portal here refers to the star image. 
 //The original intention was to use a dimensional portal, and hence the name 'portal'.
@@ -157,25 +157,25 @@ var Portal = function(x, y) {
     this.x = x;
     this.y = y;
 
-}
+};
 
 Portal.prototype.update = function(dt) {
     if (player.hasKey && Math.abs(this.x - player.x) < 80 && Math.abs(this.y - player.y) < 50) {
         gameReset();
     }
-}
+};
 
 Portal.prototype.render = function(dt) {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 
-}
+};
 
 
 var Key = function(x, y) {
     this.sprite = 'images/Key.png';
     this.x = x;
     this.y = y;
-}
+};
 
 Key.prototype.update = function(dt) {
     //If player has collected all three gems and does not have the key, move the key into the screen.
@@ -190,21 +190,21 @@ Key.prototype.update = function(dt) {
         console.log(player.hasKey);
         this.reset();
     }
-}
+};
 
 Key.prototype.render = function(dt) {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //Hide the key off the screen.
 Key.prototype.reset = function() {
     this.x = -8888;
     this.y = -9999;
-}
+};
 
 // Function to reset the game after the star has been activated.
 // Does not  reset the bugs, however.
-gameReset = function() {
+var gameReset = function() {
         player.reset();
         gemGreen.x = 75;
         gemGreen.y = 125;
