@@ -23,4 +23,4 @@ take the character in.
 
 Gems are collected automatically when the player makes contact with them.
 
-Likewise, the player's position resets (looses a life, ideally) on collision with a bug.
+Likewise, the player's position resets (loses a life, ideally) on collision with a bug.
