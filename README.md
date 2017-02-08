@@ -5,8 +5,7 @@ Customized version of the classic arcade game - Frogger
 Collect all three gems to get the key, and use the key to unlock the portal (Which is the star, in this game).
 Avoid collision with the bugs.
 
-The game resets when you unlock the portal.
-Art assets by Daniel Cook, from the Planet Cute library.
+The game resets when you unlock the portal. Art assets by Daniel Cook, from the Planet Cute library.
 Visit [Lostgarden.com] (http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html) for more details.
 
 ## Getting started 
@@ -22,5 +21,4 @@ To move the player across the screen, use up, down, left or right arrow keys, de
 take the character in.
 
 Gems are collected automatically when the player makes contact with them.
-
 Likewise, the player's position resets (loses a life, ideally) on collision with a bug.
